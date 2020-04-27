@@ -1,0 +1,15 @@
+<h1>Change your schedule:</h1>
+
+
+<form action="/schedules/<%= @schedule.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label>Date and Time: </label>
+    <input type="text" name="schedule[date]" value="<%= @schedule.date %> " required>  <br>
+    <label>Content: </label>
+    <input type="text" name="schedule[content]" value="<%= @schedule.content %>" required>  <br><br>
+
+    <input type="submit">
+
+
+</form>
+

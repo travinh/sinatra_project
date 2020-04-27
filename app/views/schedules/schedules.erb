@@ -1,0 +1,9 @@
+<h1>All schedules</h1>
+
+<ul>
+
+<% @schedules.each do |schedule| %>
+    <li> <a href="/schedules/<%= schedule.id %>"><%= schedule.user.name %>: <%= schedule.content %> - <%= schedule.date %> </li>
+<% end %>
+
+</ul>

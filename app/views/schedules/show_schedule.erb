@@ -1,0 +1,14 @@
+<h1>Schedule</h1>
+
+<p>ID: <%= @schedule.id %> </p>
+
+<p><%= @schedule.user.name %>: <%= @schedule.date %> <%= @schedule.content %> </p>
+
+<button type="button" onclick="window.location.href ='/schedules/<%= @schedule.id %>/edit';">Edit</button><br>
+
+<form action="/schedules/<%= @schedule.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Schedule">
+</form>
+
+

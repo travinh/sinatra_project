@@ -1,0 +1,10 @@
+<h2>Your schedules</h2>
+
+
+<ul>
+
+<% @schedules.each do |schedule| %>
+    <li> <a href="/schedules/<%= schedule.id %>"><%= schedule.content %> </li>
+<% end %>
+
+</ul>
