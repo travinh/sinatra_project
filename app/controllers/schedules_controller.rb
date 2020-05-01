@@ -60,10 +60,10 @@ class SchedulesController < ApplicationController
 
         if logged_in?
             @schedule = Schedule.find_by_id(params[:id])
-            if @schedule 
+            if @schedule && @schedule.user.id == session[:user_id]
                 erb :"schedules/edit_schedule"
             else 
-                redirect "/schedules"
+                redirect "/schedules/#{@schedule.id}"
             end
         else 
             redirect '/login'

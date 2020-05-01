@@ -9,9 +9,6 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "tweets_secret"
   end
 
-  get "/" do
-    erb :welcome, :layout => false
-  end
 
   get "/" do
     

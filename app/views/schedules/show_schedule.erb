@@ -2,9 +2,11 @@
 
 <p>ID: <%= @schedule.id %> </p>
 
-<p><%= @schedule.user.name %>: <%= @schedule.date %> <%= @schedule.content %> </p>
+<p><%= @schedule.user.name %>: <%= @schedule.date %> <%= @schedule.content %> </p><p>
 
+<% if @schedule.user.id == session[:user_id]  %>
 <button type="button" onclick="window.location.href ='/schedules/<%= @schedule.id %>/edit';">Edit</button><br>
+<% end %>
 
 <form action="/schedules/<%= @schedule.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
